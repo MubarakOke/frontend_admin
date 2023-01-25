@@ -73,7 +73,7 @@ const Index = () => {
     if (webSocketRef.current){
       webSocketRef.current.close()
     }
-    let websocketConnection= new WebSocket(`ws://127.0.0.1:8000/errander/${erranderID}/`)
+    let websocketConnection= new WebSocket(`ws://${process.env.REACT_APP_BACKEND_BASE_URL}/errander/${erranderID}/`)
     setWebSocket(websocketConnection)
     webSocketRef.current= websocketConnection
   }
